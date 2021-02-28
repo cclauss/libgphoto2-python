@@ -34,7 +34,7 @@ directory, compiling and installing is as easy as:
    $ python setup.py build
    $ sudo python setup.py install
 
-For more complicated build cases or out of soure tree builds, you can
+For more complicated build cases or out of source tree builds, you can
 use the "configure" mechanism with all the options it offers:
 
    $ ./configure --prefix=... PYREXC=... LIBGPHOTO2_CFLAGS=... LIBGPHOTO2_LIBS=...
