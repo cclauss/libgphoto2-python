@@ -18,6 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 ########################################################################
 
+from __future__ import print_function
 import sys
 
 symbols_before = dir()
@@ -44,7 +45,7 @@ def main(args, progname=None):
         gp_library_version(GP_VERSION_VERBOSE),
         gp_port_library_version(GP_VERSION_VERBOSE),
         ]:
-        print f
+        print(f)
 
 
 ########################################################################

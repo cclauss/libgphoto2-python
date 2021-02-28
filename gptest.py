@@ -1,3 +1,4 @@
+from __future__ import print_function
 # gptest.py - simple test/demo program for libgphoto2 bindings
 # Copyright (C) 2003-2004 David PHAM-VAN -- david@ab2r.com
 # Copyright (C) 2007 Hans Ulrich Niedermann <gp@n-dimensional.de>
@@ -18,18 +19,18 @@
 
 import gphoto2
 
-print "GPhoto version (short):", ' '.join(gphoto2.library_version(False))
-print "GPhoto version (long):"
+print("GPhoto version (short):", ' '.join(gphoto2.library_version(False)))
+print("GPhoto version (long):")
 for item in gphoto2.library_version(True):
-	print "   ", item
+	print("   ", item)
 
 #print dir(gphoto2)
 
-print """
+print("""
 CAUTION:
 The following is still very much work in progress with no one working
 very much on it and may thus be in a non-working state or inconsistent.
-"""
+""")
 
 print("Creating camera...")
 cam=gphoto2.camera()
@@ -62,7 +63,7 @@ print("Initializing camera...")
 cam.init()
 list = cam.list_folders_in_folder('/')
 for i in range(0,list.count()):
-  print list[i]
-print cam.summary
-print cam.abilities
-print cam.capture_image()
+  print(list[i])
+print(cam.summary)
+print(cam.abilities)
+print(cam.capture_image())

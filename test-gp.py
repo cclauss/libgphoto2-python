@@ -17,6 +17,7 @@
 # along with this library; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
+from __future__ import print_function
 import sys
 import os
 from pprint import pprint
@@ -37,17 +38,17 @@ class TestRunner(unittest.TestCase):
         import gphoto2
         self.ports = gphoto2.ports()
         self.ports.load()
-        print self.ports.count(), " ports found:"
+        print(self.ports.count(), " ports found:")
         for port in range(0, self.ports.count()):
-            print self.ports[port]
+            print(self.ports[port])
 
     def xtest_020_cameras(self):
         import gphoto2
         self.a_l = gphoto2.abilities_list()
         self.a_l.load()
-        print self.a_l.count(), " cameras found:"
+        print(self.a_l.count(), " cameras found:")
         for i in range(0, self.a_l.count()):
-            print self.a_l[i]
+            print(self.a_l[i])
 
     def test_030_camera(self):
         import gphoto2
