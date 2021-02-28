@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      - run: sudo apt-get install autoconf automake gphoto2
+      - run: sudo apt-get install autoconf automake gphoto2 libgphoto2-port12 python3-gphoto2 python3-gphoto2cffi
       - run: pip install bandit black codespell flake8 isort mypy pytest pyupgrade safety
       - run: bandit -r . || true
       - run: black --check .
