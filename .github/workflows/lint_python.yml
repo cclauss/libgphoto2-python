@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - run: sudo apt-get install gphoto2
-      - run: pip install bandit black codespell flake8 isort mypy pytest pyupgrade safety Pyrex
+      - run: pip install bandit black codespell flake8 isort mypy pytest pyupgrade safety
       - run: bandit -r . || true
       - run: black --check . || true
       - run: codespell --quiet-level=2 || true  # --ignore-words-list="" --skip=""
