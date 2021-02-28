@@ -17,25 +17,25 @@
 # along with this library; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-from __future__ import print_function
-import sys
-import os
-from pprint import pprint
-import unittest
 import modulefinder
+import os
+import sys
+import unittest
+from pprint import pprint
 
 
 class TestRunner(unittest.TestCase):
-
     def setUp(self):
         import gphoto2
 
     def test_000_version_short(self):
         import gphoto2
-        #print "gphoto2 version", gphoto2.version()
+
+        # print "gphoto2 version", gphoto2.version()
 
     def test_010_ports(self):
         import gphoto2
+
         self.ports = gphoto2.ports()
         self.ports.load()
         print(self.ports.count(), " ports found:")
@@ -44,6 +44,7 @@ class TestRunner(unittest.TestCase):
 
     def xtest_020_cameras(self):
         import gphoto2
+
         self.a_l = gphoto2.abilities_list()
         self.a_l.load()
         print(self.a_l.count(), " cameras found:")
@@ -52,19 +53,22 @@ class TestRunner(unittest.TestCase):
 
     def test_030_camera(self):
         import gphoto2
+
         print("Creating camera...")
         self.cam = gphoto2.camera()
         pprint(dir(self.cam))
 
     def test_007_long(self):
         import gphoto2
+
         pprint(gphoto2.library_version(False))
         pprint(gphoto2.library_version(True))
 
     def test_050_foo(self):
         import gphoto2
+
         pprint(dir(gphoto2))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

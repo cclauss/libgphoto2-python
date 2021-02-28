@@ -18,11 +18,11 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 ########################################################################
 
-from __future__ import print_function
 import sys
 
 symbols_before = dir()
 from ctypes_gphoto2 import *
+
 symbols_after = dir()
 
 
@@ -30,8 +30,8 @@ symbols_after = dir()
 
 import pprint
 
-
 ########################################################################
+
 
 def main(args, progname=None):
     for x in symbols_before + ["symbols_before"]:
@@ -44,13 +44,13 @@ def main(args, progname=None):
         gp_port_library_version(GP_VERSION_SHORT),
         gp_library_version(GP_VERSION_VERBOSE),
         gp_port_library_version(GP_VERSION_VERBOSE),
-        ]:
+    ]:
         print(f)
 
 
 ########################################################################
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main(sys.argv[1:], progname=sys.argv[0])
 
 

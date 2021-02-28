@@ -23,7 +23,6 @@
 
 import ctypes as __ctypes
 
-
 ########################################################################
 # Note on exported python symbols:
 #   As long as we can make all non-exported symbols in this module start
@@ -39,7 +38,7 @@ import ctypes as __ctypes
 #
 # An automatic test case may compare this __all__ to the
 # libgphoto2.sym and libgphoto2_port.sym files.
-#__all__ = [
+# __all__ = [
 #    "gp_library_version",
 #    "gp_port_library_version",
 #    "GPVersionVerbosity",
@@ -50,9 +49,10 @@ import ctypes as __ctypes
 
 ########################################################################
 
+
 def __char_p_p_to_string_list(value):
     """Turn char** into ["foo", "bar", "bla"]"""
-    array_of_c_char_p = __ctypes.c_char_p * 200 # FIXME: OUCH!
+    array_of_c_char_p = __ctypes.c_char_p * 200  # FIXME: OUCH!
     blubb = array_of_c_char_p.from_address(value)
     retval = []
     for x in blubb:
@@ -75,17 +75,19 @@ assert __gp, "Error loading libgphoto2"
 # typedef enum { GP_VERSION_SHORT, GP_VERSION_VERBOSE } GPVersionVerbosity;
 class GPVersionVerbosity(__ctypes.c_int):
     pass
+
+
 GP_VERSION_SHORT = GPVersionVerbosity(0)
 GP_VERSION_VERBOSE = GPVersionVerbosity(1)
 
 # char **gp_library_version(GPVersionVerbosity verbose);
 gp_library_version = __gp.gp_library_version
-gp_library_version.argtypes = ( GPVersionVerbosity, )
+gp_library_version.argtypes = (GPVersionVerbosity,)
 gp_library_version.restype = __char_p_p_to_string_list
-        
+
 # char **gp_port_library_version(GPVersionVerbosity verbose);
 gp_port_library_version = __gpp.gp_port_library_version
-gp_port_library_version.argtypes = ( GPVersionVerbosity, )
+gp_port_library_version.argtypes = (GPVersionVerbosity,)
 gp_port_library_version.restype = __char_p_p_to_string_list
 
 

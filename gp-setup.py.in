@@ -20,7 +20,9 @@
 
 from distutils.core import setup
 from distutils.extension import Extension
+
 from Pyrex.Distutils import build_ext
+
 
 def my_include_dirs():
     """create list of include dirs from LIBGPHOTO2_CFLAGS env var"""
